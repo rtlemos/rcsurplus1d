@@ -11,17 +11,17 @@ rcsurplus
 \section{Fields}{
 
 \describe{
-\item{\code{fit_counter}}{numeric.}
+\item{\code{fit_counter}}{numeric. NUmber of times the model has been fitted.}
 
-\item{\code{models}}{list.}
+\item{\code{models}}{list. List of models handled by the daemon.}
 
-\item{\code{coda_models}}{list.}
+\item{\code{coda_models}}{list. List of CODA output.}
 
-\item{\code{model_names}}{character.}
+\item{\code{model_names}}{character. List with names of fitted models.}
 
-\item{\code{par_titles}}{data.frame.}
+\item{\code{par_titles}}{data.frame. Parameter names, as they appear in plots.}
 
-\item{\code{IO}}{.IAT.}
+\item{\code{IO}}{.IAT. Reference class object that handles OpenBUGS output.}
 }}
 \section{Methods}{
 

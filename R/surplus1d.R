@@ -1,16 +1,15 @@
 #' rcsurplus
 #'
-#' @field fit_counter numeric. 
-#' @field models list. 
-#' @field coda_models list. 
-#' @field model_names character. 
-#' @field par_titles data.frame. 
-#' @field IO .IAT. 
+#' @field fit_counter numeric. NUmber of times the model has been fitted.
+#' @field models list. List of models handled by the daemon.
+#' @field coda_models list. List of CODA output.
+#' @field model_names character. List with names of fitted models.
+#' @field par_titles data.frame. Parameter names, as they appear in plots.
+#' @field IO .IAT. Reference class object that handles OpenBUGS output.
 #'
 #' @importFrom methods setRefClass
 #' @import rcvirtual
 #' @import ggplot2
-# #' @import grid
 #' @import R2OpenBUGS
 #' @import shiny
 #' @importFrom shinyBS bsAlert
@@ -660,10 +659,10 @@ rcsurplus1d <- setRefClass(
                 })
             }
             
-            ui <- navbarPage(
+            ui <- shiny::navbarPage(
                 title = 'RC SURPLUS',
                 tabPanel("About",
-                         navbarPage('About',
+                         shiny::navbarPage('About',
                                     tabPanel( 'Introduction', fluidRow(helpText(
                                         rcsurplus1d.help$Introduction )) ),
                                     tabPanel( 'Model',
@@ -681,7 +680,7 @@ rcsurplus1d <- setRefClass(
                          )
                 ),
                 tabPanel("Input",
-                         navbarPage('Input',
+                         shiny::navbarPage('Input',
                                     tabPanel('Data',
                                              fluidPage(
                                                  sidebarLayout(
@@ -783,7 +782,7 @@ rcsurplus1d <- setRefClass(
                          )
                 ),
                 tabPanel('Output',
-                         navbarPage('Output',
+                         shiny::navbarPage('Output',
                                     tabPanel('Hyperparameters',
                                              fluidPage(
                                                  sidebarLayout(

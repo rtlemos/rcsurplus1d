@@ -1,4 +1,4 @@
-#' rcplotter
+#' rcplotter: reference class that plots results of surplus model fits
 #'
 #' @field buffer matrix. 
 #' @field palettes list. 
@@ -7,9 +7,9 @@
 #' @import rcvirtual
 #' @import grid
 #' @importFrom methods setRefClass
-#' @export rcplotter
-#' @exportClass rcplotter
 #'
+# #' @export rcplotter
+# #' @exportClass rcplotter
 rcplotter <- setRefClass(
     Class = 'rcplotter',
     contains = 'rcvirtual.plotter',
@@ -146,7 +146,7 @@ rcplotter <- setRefClass(
             nl <- nlevels(out$model)
             fc <- .self$palettes$fill[1:nl]
             myplot <- ggplot(data = out, aes(x = x, y = y, colour = model)) + 
-                geom_point(point = 2, alpha = 0.2) +
+                geom_point(cex = 2, alpha = 0.2) +
                 xlab(mytitle[1]) + ylab(mytitle[2]) +
                 scale_colour_manual(values = .self$palettes$fill, guide = FALSE)
             .self$set_in_buffer(myplot, xpos, ypos)

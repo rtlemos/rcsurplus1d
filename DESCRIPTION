@@ -16,7 +16,7 @@ Collate:
     surplus1d.R
     global_vars_funs.R
     help.R
-    rcsurplus1d.R
+    rcsurplus1d-package.R
 Suggests:
     testthat,
     knitr,

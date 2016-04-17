@@ -4,9 +4,9 @@
 \name{rcplotter-class}
 \alias{rcplotter}
 \alias{rcplotter-class}
-\title{rcplotter}
+\title{rcplotter: reference class that plots results of surplus model fits}
 \description{
-rcplotter
+rcplotter: reference class that plots results of surplus model fits
 }
 \section{Fields}{
 

@@ -1,7 +1,7 @@
 #' Global specs for rcsurplus
 #' 
 #' \code{rcsurplus1d.help}
-#' @export rcsurplus1d.help
+# #' @export rcsurplus1d.help
 #' 
 rcsurplus1d.help <- list(
     

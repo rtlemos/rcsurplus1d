@@ -11,7 +11,8 @@
 #' @param mcmc_b MCMC burn-in fraction
 #' @param mcmc_c number of MCMC chains
 #' @export rcsurplus1d.default
-rcsurplus1d.default <- list(
+#' @export myglobal
+myglobal <- rcsurplus1d.default <- list(
       priorK   = c(100, 15000), 
 	  priorr   = c(0,1), 
       priorPHI = c(0,1), 
@@ -22,15 +23,3 @@ rcsurplus1d.default <- list(
       mcmc_b   = c(0.05, 0.5),
       mcmc_c   = c(1,3)   
   )
-
-#' Function name
-#'		
-#' \code{function_name} is a function that does
-#' @param par1 Explanation of the role of parameter 1
-#' @return theExplanation of what is returned (z)
-function_name <- function( par1 ){
-	print('working on it')
-    z <- 0
-	return(z)
-}
-
