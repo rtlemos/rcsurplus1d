@@ -1,0 +1,25 @@
+Package: rcsurplus1d
+Type: Package
+Title: Fisheries surplus production models without spatial component
+Version: 0.0.0.9003
+Date: 2016-04-16
+Authors@R: person("Ricardo", "T. Lemos", email = "rtl00@yahoo.com", 
+    role = c("aut", "cre"))
+Description: R package to fit surplus production models (fisheries). 
+    Reference: Rankin and Lemos, 2015. An alternative surplus production model. 
+    Ecological Modeling 313:106-126. 
+    To run models, you must have OpenBUGS installed on your machine.
+License: APACHE 2.0
+LazyData: true
+Collate:
+    plotter.R
+    surplus1d.R
+    global_vars_funs.R
+    help.R
+    rcsurplus1d.R
+Suggests:
+    testthat,
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
+RoxygenNote: 5.0.1
