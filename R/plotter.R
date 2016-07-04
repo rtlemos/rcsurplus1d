@@ -6,7 +6,6 @@
 #'
 #' @import rcvirtual
 #' @import grid
-#' @importFrom methods setRefClass
 #'
 # #' @export rcplotter
 # #' @exportClass rcplotter

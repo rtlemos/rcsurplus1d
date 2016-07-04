@@ -30,8 +30,8 @@ rcplotter: reference class that plots results of surplus model fits
 
 \item{\code{get_ts_fit_plot(out, mytitle, mylabs, xpos = 1, ypos = 1)}}{Plots a time series plot with observed and fit (median plus 95 CI)}
 
-\item{\code{initialize(name = "anonymous", verbose = TRUE, autoconstruct = FALSE,
-  specs = NULL)}}{Default method to initialize basic objects}
+\item{\code{initialize(package.name = "anonymous", object.name = "anonymous",
+  verbose = TRUE, autoconstruct = FALSE, conf = NULL)}}{Default method to initialize basic objects}
 
 \item{\code{set_buffer_size(nr, nc)}}{Sets up plotter's buffer size (number of rows and columns)}
 

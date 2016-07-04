@@ -17,6 +17,13 @@ Collate:
     global_vars_funs.R
     help.R
     rcsurplus1d-package.R
+Imports:
+    rcvirtual,
+    R2OpenBUGS,
+    ggplot2,
+    grid,
+    shiny,
+    shinyBS
 Suggests:
     testthat,
     knitr,
