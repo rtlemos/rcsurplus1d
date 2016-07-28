@@ -13,13 +13,13 @@
 #' @export rcsurplus1d.default
 #' @export myglobal
 myglobal <- rcsurplus1d.default <- list(
-      priorK   = c(100, 15000), 
-	  priorr   = c(0,1), 
-      priorPHI = c(0,1), 
-	  priorq   = c(-20,-1), 
-	  priors   = c(-20,20),
-      mcmc_n   = c(1000, 10000),
-      mcmc_t   = c(1,100),
-      mcmc_b   = c(0.05, 0.5),
-      mcmc_c   = c(1,3)   
-  )
+  priorK   = c(100, 15000), 
+  priorr   = c(0,1), 
+  priorPHI = c(0,1), 
+  priorq   = c(-20,-1), 
+  priors   = c(-20,20),
+  mcmc_n   = c(1000, 10000),
+  mcmc_t   = c(1,100),
+  mcmc_b   = c(0.05, 0.5),
+  mcmc_c   = c(1,3)   
+)
