@@ -1,6 +1,6 @@
 #' rcsurplus
 #'
-#' @field fit_counter numeric. NUmber of times the model has been fitted.
+#' @field fit_counter numeric. Number of times the model has been fitted.
 #' @field models list. List of models handled by the daemon.
 #' @field coda_models list. List of CODA output.
 #' @field model_names character. List with names of fitted models.
