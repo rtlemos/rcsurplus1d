@@ -31,7 +31,7 @@ rcsurplus1d <- setRefClass(
     methods = list(
         initialize = function(){
             .self$fit_counter <- 0
-            .self$models <- vector("list", length = 2)
+            .self$models <- vector("list", length = 4)
             .self$IO <- rcplotter()
             .self$model_names <- c("Pella-Tomlinson", "Schaefer",
                                    "Fox", "Alternative")
