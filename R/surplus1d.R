@@ -1,4 +1,4 @@
-#' rcsurplus
+#' rcsurplus1d
 #'
 #' @field fit_counter numeric. Number of times the model has been fitted.
 #' @field models list. List of models handled by the daemon.
