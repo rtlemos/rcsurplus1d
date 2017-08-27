@@ -14,7 +14,7 @@ explore the well-studied Namibian hake fishery dataset.
 
 ## Getting started
 
-First, download and install OpenBUGS (http://www.openbugs.net/w/Downloads).
+If you don't have the software OpenBUGS, first download and install it (http://www.openbugs.net/w/Downloads).
 
 Then, install three packages in the following order:
 
@@ -35,11 +35,11 @@ myinstance <- rcsurplus1d()
 myinstance$gui()
 ```
 
-And that is it!
+And that is it! Please read the `About` tabs, to understand the theoretical concepts and how to navigate the GUI. Additional information about the model can be found in [Rankin and Lemos (2015)](https://www.researchgate.net/publication/279962333_An_alternative_surplus_production_model?ev=prf_high).
 
 ## Further analyses
 
-Inside the temporary folder of your `R` session (`tempdir()`), you will find several files that may be useful for troubleshooting and further analyses. The following short list is generated when we only run a single chain for the alternative model:
+Inside the temporary folder of your `R` session (`tempdir()`), you will find several files that may be useful for troubleshooting and running further analyses. The following short list is generated when we only run a single chain for the alternative model:
 
 * `data.txt` -> your fisheries dataset in a format that OpenBUGS understands
 * `alternative_model.txt` -> OpenBUGS model specification
