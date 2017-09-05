@@ -20,6 +20,7 @@ Collate:
 Imports:
     rcvirtual,
     R2OpenBUGS,
+    coda,
     ggplot2,
     grid,
     shiny,
