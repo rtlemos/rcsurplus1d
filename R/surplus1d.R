@@ -11,6 +11,7 @@
 #' @import rcvirtual
 #' @import ggplot2
 #' @import R2OpenBUGS
+#' @import coda
 #' @import shiny
 #' @importFrom shinyBS bsAlert
 #' @importFrom shinyBS bsButton
