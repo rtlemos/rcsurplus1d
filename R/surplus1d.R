@@ -11,8 +11,8 @@
 #' @import rcvirtual
 #' @import ggplot2
 #' @import R2OpenBUGS
-#' @import coda
 #' @import shiny
+#' @import coda
 #' @importFrom shinyBS bsAlert
 #' @importFrom shinyBS bsButton
 #' @importFrom shinyBS createAlert
@@ -622,39 +622,71 @@ rcsurplus1d <- setRefClass(
                             cat('\n')
                         }
                     } else if(input$diag == 'CODA - Gelman' & input$do_coda){
-                        if(input$spm_diag != 'Alternative') {
+                        if(any(input$spm_diag == 'Pella-Tomlinson')) {
                             cat(sep[1])
                             print(gelman.diag(m$coda_models[[1]]))
                             cat('\n')
                         }
-                        if(input$spm_diag != 'Schaefer'){
+                        if(any(input$spm_diag == 'Schaefer')) {
                             cat(sep[2])
                             print(gelman.diag(m$coda_models[[2]]))
                             cat('\n')
                         }
+                        if(any(input$spm_diag == 'Fox')) {
+                          cat(sep[3])
+                          print(gelman.diag(m$coda_models[[3]]))
+                          cat('\n')
+                        }
+                        if(any(input$spm_diag == 'Alternative')) {
+                          cat(sep[4])
+                          print(gelman.diag(m$coda_models[[4]]))
+                          cat('\n')
+                        }
                     } else if(input$diag == 'CODA - Geweke' & input$do_coda){
-                        if(input$spm_diag != 'Alternative') {
+                        if(any(input$spm_diag == 'Pella-Tomlinson')) {
                             cat(sep[1])
                             print(geweke.diag(m$coda_models[[1]], frac1=0.1, frac2=0.5))
                             cat('\n')
                         }
-                        if(input$spm_diag != 'Schaefer'){
+                        if(any(input$spm_diag == 'Schaefer')) {
                             cat(sep[2])
                             print(geweke.diag(m$coda_models[[2]], frac1=0.1, frac2=0.5))
                             cat('\n')
                         }
+                        if(any(input$spm_diag == 'Fox')) {
+                          cat(sep[3])
+                          print(geweke.diag(m$coda_models[[3]], frac1=0.1, frac2=0.5))
+                          cat('\n')
+                        }
+                        if(any(input$spm_diag == 'Alternative')) {
+                          cat(sep[4])
+                          print(geweke.diag(m$coda_models[[4]], frac1=0.1, frac2=0.5))
+                          cat('\n')
+                        }
                     } else if(input$diag == 'CODA - Raftery & Lewis' & input$do_coda){
-                        if(input$spm_diag != 'Alternative') {
+                        if(any(input$spm_diag == 'Pella-Tomlinson')) {
                             cat(sep[1])
                             print(raftery.diag(data=m$coda_models[[1]], 
                                                q=0.025, r=0.005, s=0.95, converge.eps=0.001))
                             cat('\n')
                         }
-                        if(input$spm_diag != 'Schaefer'){
+                        if(any(input$spm_diag == 'Schaefer')) {
                             cat(sep[2])
                             print(raftery.diag(data=m$coda_models[[2]], 
                                                q=0.025, r=0.005, s=0.95, converge.eps=0.001))
                             cat('\n')
+                        }
+                        if(any(input$spm_diag == 'Fox')) {
+                          cat(sep[3])
+                          print(raftery.diag(data=m$coda_models[[3]], 
+                                             q=0.025, r=0.005, s=0.95, converge.eps=0.001))
+                          cat('\n')
+                        }
+                        if(any(input$spm_diag == 'Alternative')) {
+                          cat(sep[4])
+                          print(raftery.diag(data=m$coda_models[[4]], 
+                                             q=0.025, r=0.005, s=0.95, converge.eps=0.001))
+                          cat('\n')
                         }
                     }
                 })
