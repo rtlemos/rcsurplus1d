@@ -6,6 +6,7 @@
 #' @field model_names character. List with names of fitted models.
 #' @field par_titles data.frame. Parameter names, as they appear in plots.
 #' @field IO .IAT. Reference class object that handles OpenBUGS output.
+#' @field bounds Prior bounds for parameters
 #'
 #' @importFrom methods setRefClass
 #' @import rcvirtual
@@ -27,11 +28,13 @@ rcsurplus1d <- setRefClass(
         coda_models = "list",
         model_names = "character",
         par_titles = "data.frame",
-        IO = "rcvirtual.plotter"
+        IO = "rcvirtual.plotter",
+        bounds = "list"
     ),
     methods = list(
-        initialize = function(){
+        initialize = function(bounds = myglobal){
             .self$fit_counter <- 0
+            .self$bounds <- bounds
             .self$models <- vector("list", length = 4)
             .self$IO <- rcplotter()
             .self$model_names <- c("Pella-Tomlinson", "Schaefer",
@@ -752,52 +755,52 @@ rcsurplus1d <- setRefClass(
                                                        multiple=TRUE),
                                         h4("Bounds of uniform priors"),
                                         sliderInput("Kprior", "Carrying capacity: \\(K\\) and \\(e^\\rho\\)",
-                                                    min = myglobal$priorK[1],
-                                                    max = myglobal$priorK[2],
-                                                    value = c(myglobal$priorK[1],myglobal$priorK[2]),
+                                                    min = bounds$priorK[1],
+                                                    max = bounds$priorK[2],
+                                                    value = c(bounds$priorK[1],bounds$priorK[2]),
                                                     step = 100 ),
                                         sliderInput("rprior", "Growth rate: \\(r\\)",
-                                                    min = myglobal$priorr[1],
-                                                    max = myglobal$priorr[2],
-                                                    value = c(myglobal$priorr[1],myglobal$priorr[2]),
+                                                    min = bounds$priorr[1],
+                                                    max = bounds$priorr[2],
+                                                    value = c(bounds$priorr[1],bounds$priorr[2]),
                                                     step = 0.01 ),
                                         sliderInput("PHIprior", "Elasticity: \\(\\phi\\)",
-                                                    min = myglobal$priorPHI[1],
-                                                    max = myglobal$priorPHI[2],
-                                                    value = c(myglobal$priorPHI[1],myglobal$priorPHI[2]),
+                                                    min = bounds$priorPHI[1],
+                                                    max = bounds$priorPHI[2],
+                                                    value = c(bounds$priorPHI[1],bounds$priorPHI[2]),
                                                     step = 0.01 ),
                                         sliderInput("qprior", "Log-catchability: \\(\\log (q)\\) and \\(\\chi\\)",
-                                                    min = myglobal$priorq[1],
-                                                    max = myglobal$priorq[2],
-                                                    value = c(myglobal$priorq[1],myglobal$priorq[2]),
+                                                    min = bounds$priorq[1],
+                                                    max = bounds$priorq[2],
+                                                    value = c(bounds$priorq[1],bounds$priorq[2]),
                                                     step = 0.01 ),
                                         sliderInput("sprior", "Model log-variance: \\(\\log (\\sigma)\\)",
-                                                    min = myglobal$priors[1],
-                                                    max = myglobal$priors[2],
-                                                    value = c(myglobal$priors[1],myglobal$priors[2]),
+                                                    min = bounds$priors[1],
+                                                    max = bounds$priors[2],
+                                                    value = c(bounds$priors[1],bounds$priors[2]),
                                                     step = 0.01 )
                                  ),
                                  column(4,
                                         h4("MCMC settings"),
                                         sliderInput("MCMCn", "Number of iterations for output:",
-                                                    min = myglobal$mcmc_n[1],
-                                                    max = myglobal$mcmc_n[2],
-                                                    value = myglobal$mcmc_n[1],
+                                                    min = bounds$mcmc_n[1],
+                                                    max = bounds$mcmc_n[2],
+                                                    value = bounds$mcmc_n[1],
                                                     step = 100 ),
                                         sliderInput("MCMCb", "Burn-in ratio:",
-                                                    min = myglobal$mcmc_b[1],
-                                                    max = myglobal$mcmc_b[2],
-                                                    value = myglobal$mcmc_b[2],
+                                                    min = bounds$mcmc_b[1],
+                                                    max = bounds$mcmc_b[2],
+                                                    value = bounds$mcmc_b[2],
                                                     step = 0.05 ),
                                         sliderInput("MCMCt", "Thinning factor:",
-                                                    min = myglobal$mcmc_t[1],
-                                                    max = myglobal$mcmc_t[2],
-                                                    value = myglobal$mcmc_t[1],
+                                                    min = bounds$mcmc_t[1],
+                                                    max = bounds$mcmc_t[2],
+                                                    value = bounds$mcmc_t[1],
                                                     step = 1 ),
                                         sliderInput("MCMCc", "Number of chains:",
-                                                    min = myglobal$mcmc_c[1],
-                                                    max = myglobal$mcmc_c[2],
-                                                    value = myglobal$mcmc_c[1],
+                                                    min = bounds$mcmc_c[1],
+                                                    max = bounds$mcmc_c[2],
+                                                    value = bounds$mcmc_c[1],
                                                     step = 1 ),
                                         checkboxInput("overrelax", "Over-relax", FALSE),
                                         p('Total no. MCMC iterations:'),
