@@ -35,6 +35,8 @@ myinstance <- rcsurplus1d()
 myinstance$gui()
 ```
 
+To load your own data, navigate to the tab "Input"; on the left, under "Data input", you will see "Browse...". Click on it to load your CSV file, which *must* have the columns "year", "catch", "effort", and "cpue".
+
 And that is it! Please read the `About` tabs, to understand the theoretical concepts and how to navigate the GUI. Additional information about the model can be found in [Rankin and Lemos (2015)](https://www.researchgate.net/publication/279962333_An_alternative_surplus_production_model?ev=prf_high).
 
 ## Further analyses
